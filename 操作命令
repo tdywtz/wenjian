@@ -1,3 +1,38 @@
+提交本地项目到GitHub (iOS)
+字数727 阅读1694 评论4 喜欢24 
+GitHub相信大家都知道，上面有很多优秀的开源项目供我们学习，比较著名的类似AFNetworking、SDWebImage等等。本篇文章就是教大家如何在Mac系统下提交自己的项目到GitHub上，相信对于新手还是很有帮助的。
+需要的工具
+1.安装Git  http://git-scm.com/download/mac 我下的是2.2.1版本的。
+2.终端 (自带的，请允许我卖个萌。。。)
+操作流程
+1.GitHub 上注册账号  https://github.com/ 去这上面注册下就行。
+2.配置 SSH key
+ ①  defaults write com.apple.finder AppleShowAllFiles -bool true     终端 显示隐藏文件（需要重新运行Finder)。
+ ② 点击桌面顶部菜单  前往>个人  看看自己电脑上有没有个 .ssh 的隐藏文件，有的话个人建议删除，新建个。
+ ③  mkdir .ssh    终端新建个 .ssh文件
+ ④  cd .ssh   进入到刚才新建的.ssh文件目录下 
+ ⑤  ssh-Keygen -t rsa -C "your_email@example.com"       后面“ ”里面 随意输入个邮箱就行,回车会提示你输入密码什么的，可以无视一直回车下去。
+ ⑥  ls -la      查看是否存在 id_rsa(私钥)  id_rsa.pub(公钥) 这两个东西，如果存在就成功了。
+ ⑦ pbcopy < ~/.ssh/id_rsa.pub     拷贝 公钥
+ ⑧ 进入GitHub 登入 。创建一个项目。如图4 - 图6 所示 添加你刚才生成的SSH Key 到GitHub上，也就是最后一张图的 Add SSH Key 点击 会让你输入秘钥 以及秘钥的名称。 秘钥 pbcopy < ~/.ssh/id_rsa.pub 这个终端命令就已经复制过了  直接command + V 粘贴上去就行，秘钥名称随意。
+⑨  ssh -T git@github.com   新添加到github上的秘钥左边的点一开始是灰色的，终端执行这个命令后，刷新网页会看到灰色点变成了绿色。
+3.在GitHub 上创建公开项目 如图1 - 图3 操作。
+4. 上传本地项目到GitHub。
+   ① 在电脑上新建个项目文件夹 。
+   ②  cd + 刚才新建的项目文件夹路径
+   ③  git clone + GitHub 上创建的项目地址    （GitHub 上创建的项目地址如下图所示）这样你在GitHub 上创建的项目就克隆下来了
+  ④ cd + 克隆下来的项目路径 （如何在终端输入路径，可以直接把你想要知道路径的文件夹拖到终端里 这样自动就要该文件夹的路径了）
+  ⑤ git init    (git 仓库的初始化)
+  ⑥ git add .    (这里注意：add 空格 再加 .)
+  ⑦ git status    (查看add 成功没)
+  ⑧ git commit -m "描述"   （“ ” 引号里面输入你的描述 随意）
+  ⑨ git push origin master        (最后push到GitHub上)
+ 
+到这里大概结束了，祝大家能够在GitHub上发起更多好的项目，发扬光大开源精神！
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+
 之前都写过一篇github常用命令的文章，可是这些日子来，发现自己根本没掌握，真是很讨厌github这种提交方式，如果能够使用界面操作多好啊。
 
 添加已有项目到github
