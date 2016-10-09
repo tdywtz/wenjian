@@ -1,1 +1,7 @@
 
+问题1
+Setting up CocoaPods master repo
+[!] Unable to add a source with url `https://github.com/CocoaPods/Specs.git` named `master-1`.
+You can try adding it manually in `~/.cocoapods/repos` or via `pod repo add`.
+处理方法
+git clone https://github.com/CocoaPods/Specs.git ~/.cocopods/repos/master
