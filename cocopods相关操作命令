@@ -1,0 +1,2 @@
+等待==Setting up CocoaPods master repo
+终端 cd  ~/.cocoapods/repos 然后 du -sh * 查看下载进度（124完成）
