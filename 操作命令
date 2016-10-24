@@ -131,6 +131,9 @@ git tag -s v1.0-m 'first version'
 很简单，知道tag名称后：
 
 git tag -d v1.0
+删除远程标签
+git push origin :refs/tags/v1.01
+
 4验证tag
 
 如果你有GPG私钥的话就可以验证tag：
