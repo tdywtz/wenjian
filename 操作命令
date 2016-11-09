@@ -131,3 +131,9 @@ git tag -v v1.0
 我们在执行git push的时候，tag是不会上传到服务器的，比如现在的github，创建tag后git push，在github网页上是看不到tag的，
 为了共享这些tag，你必须这样：
 git push origin --tags
+
+
+【】删除远程分支
+命令：$ git push origin 【空格】【冒号】【你的分支名字】
+比如我github上有master和feature分支，我现在想着删除feature分支，命令如下：
+$ git push origin :feature
