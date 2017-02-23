@@ -1,0 +1,8 @@
+首先,确保你已经关掉了openfire
+打开终端 (在应用程序-->实用工具-->)
+输入以下命令
+sudo rm -rf /Library/PreferencePanes/Openfire.prefPane
+sudo rm -rf /usr/local/openfire
+sudo rm -rf /Library/LaunchDaemons/org.jivesoftware.openfire.plist
+第一条会让你输入管理员密码,尽管你输入的时候,终端不会显示,不必担心,正确输入后按回车,它就执行了.
+三条命令以后,openfire就彻底消失了.
